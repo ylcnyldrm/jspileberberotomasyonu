@@ -18,8 +18,8 @@
   <div class="main">
     <p class="sign" align="center">Sign in</p>
     <form class="form1"  action="yonetici_giris_response.jsp" method="post">
-      <input class="un " type="text" align="center"  name="username" placeholder="Username">
-      <input class="pass" type="password" align="center"  name="password" placeholder="Password">
+      <input class="un " type="text" align="center"  name="mail" placeholder="Username">
+      <input class="pass" type="password" align="center"  name="sifre" placeholder="Password">
       <input type="submit"  class="submit"   align="center" value="Login">   
       <p class="forgot" align="center"><a href="#">Forgot Password?</p> 
       </form> 

@@ -29,6 +29,7 @@
 	   try{
 		   
 		   rs.next();  
+		   
 		   kullaniciid= Integer.parseInt(rs.getString("kullanici_id")); 
 		   if(rs.getString("kullanici_mail").equals(email) && rs.getString("kullanici_sifre").equals(sifre)){
 		     

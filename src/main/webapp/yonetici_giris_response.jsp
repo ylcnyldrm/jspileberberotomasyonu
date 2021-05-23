@@ -12,33 +12,44 @@
 <body>
   
   <%
-  Veritabanibaglantisi vt = new Veritabanibaglantisi();
+   Veritabanibaglantisi vt = new Veritabanibaglantisi();
    
-   String eskiSifre=request.getParameter("eskiSifre");
-   String yeniSifre=request.getParameter("yeniSifre");
-   System.out.print("USERNAME"+eskiSifre);
-   System.out.print("ŞİFRE"+yeniSifre);
+   String mail=request.getParameter("mail");
+   String sifre=request.getParameter("sifre");
+   System.out.print("mail"+mail);
+   System.out.print("ŞİFRE"+sifre);
   
-   if(eskiSifre!=null & yeniSifre!=null)
-   {    
-	   ResultSet rs= vt.dbdenVeriCek("select kullanici_sifre from kullanici");
+   if(mail!=null & sifre!=null)
+   {   
+	   ResultSet rs= vt.dbdenVeriCek("select * from yonetici where yonetici_mail='"+mail+"' and yonetici_sifre='"+Integer.parseInt(sifre)+"' ");
 	   
-	   try{  
-		   rs.next();
-		    if(rs.getString("yonetici_ad").equals(eskiSifre) && rs.getString("yonetici_sifre").equals(yeniSifre)){
-		    	System.out.print("Bağlantı başarılı userName = "+eskiSifre+"sifre= "+yeniSifre); 
-		    	 response.sendRedirect("yonetici_main_yonlendirme.jsp");
-		    	
-		    }
-		    else {
-		    	System.out.print("Bağlantı başarılı userName = "+eskiSifre+"sifre= "+yeniSifre); 
-		    	 response.sendRedirect("error.jsp");
-		    }
-	   }catch(SQLException e){
+	   if(rs!=null){
 		   
-			System.out.print("e"+e); 
+		   try{  
+			   rs.next();
+			    if(rs.getString("yonetici_mail").equals(mail) && rs.getString("yonetici_sifre").equals(sifre)){
+			    	System.out.print("Bağlantı başarılı userName = "+mail+"sifre= "+sifre); 
+			    	 response.sendRedirect("yonetici_main_yonlendirme.jsp");
+			    	
+			    }
+			    else {
+			    	System.out.print("Bağlantı başarılı userName = "+mail+"sifre= "+sifre); 
+			    	 response.sendRedirect("error.jsp");
+			    }
+			    
+		   }catch(SQLException e){
+			   
+				System.out.print("e"+e); 
+		   }
+		   
+		   vt.baglantiyiKes();
+		   
+	   }else {
+		   
+		   out.print(" BÖYLE BİR YÖNETİCİ BULUNAMAMAKTADIR.  ");
 	   }
-	   vt.baglantiyiKes();
+	   
+	 
    } 
    else {
 	   
