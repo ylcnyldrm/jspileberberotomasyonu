@@ -37,19 +37,18 @@
 			   LocalDate today=LocalDate.now(); 
 			   String currentDate=today.toString(); 
 			   SimpleDateFormat myformat=new SimpleDateFormat("yyyy-MM-dd");
-		       String secondDate1 =currentDate;
+		       String secondDate1 =currentDate; 
+		       System.out.print("SEN NESİN BE ABİ "+kullaniciKayitTarih);
+		       
 		 	   Date firstDate = myformat.parse(kullaniciKayitTarih);
 			   Date secondDate = myformat.parse(secondDate1);
 			   long dif = firstDate.getTime()- secondDate.getTime();
 	  		   int daysBetween =(int) (dif/(1000*60*60*24));
-			   System.out.println(daysBetween);
-			   
+			   session.setAttribute("girenKullaniciid",kullaniciid);   
 			   if(daysBetween <60){ 
-			    	  session.setAttribute("girenKullaniciid",kullaniciid);   
 			    	  response.sendRedirect("kullanici_main_yonlendirme.jsp"); 
 			   }
 			   else { 
-				     session.setAttribute("girenKullaniciid", kullaniciid);
 				     response.sendRedirect("kullanici_parola_guncelle.jsp");
 			   }
 			    

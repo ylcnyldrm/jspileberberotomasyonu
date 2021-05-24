@@ -15,7 +15,7 @@
   
 </head>
 <body>
-  
+ 
 <div class="main">
     <p class="sign" align="center">Kullanıcı İşlemleri</p>
     <form class="form1"  action="kullanici_randevu_al.jsp" method="post">
