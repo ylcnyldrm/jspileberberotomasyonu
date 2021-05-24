@@ -49,27 +49,35 @@
 							</tr>
 						</thead>
 						<tbody>
-						<% 
-                         Veritabanibaglantisi vt = new Veritabanibaglantisi();
-                         ResultSet rs = vt.dbdenVeriCek("select * from randevu.berberler");
+						<%
+						int girenKullaniciid=(int)session.getAttribute("girenKullaniciid");  
+						System.out.println("GİREN KD İD "+String.valueOf(girenKullaniciid));
+                        Veritabanibaglantisi vt = new Veritabanibaglantisi();
+                        ResultSet rs = vt.dbdenVeriCek("SELECT randevu.kullanici.kullanici_ad as kullanıcı_ad, "+
+                        "randevu.kullanici.kullanici_soyad as kullanıcı_soyad, "+
+                        "randevu.kullanici.kullanici_tc as kullanıcı_tc, "+
+                        "randevu.randevu.randevu_tarih as randevu_tarih "+ 
+                        "FROM randevu.kullanici,randevu.randevu "+
+                        "WHERE randevu.kullanici.kullanici_id='"+girenKullaniciid+"' ");
+                          
                          if(rs!=null)
                          {
                              while(rs.next())
                              {
-                                 %>
-                                 
+                                 %> 
 								<tr>
-									<td class="column1"><%=  rs.getString("berber_ad") %> </td>
-									<td class="column2"><%=  rs.getString("berber_soyad")%>  </td>
-									<td class="column3"><%=  rs.getString("berber_cinsiyet") %></td> 
-									<td class="column4"><a href='kullanici_randevu_tarihsec.jsp?id=<%=rs.getString("berber_id")%>'>Randevu Al </a></td>  
-									 <%
-									 session.setAttribute("randevuberberid", rs.getString("berber_id")); 
-									 %>
+									<td class="column1"><%=  rs.getString("kullanıcı_ad") %> </td>
+									<td class="column2"><%=  rs.getString("kullanıcı_soyad")%>  </td>
+									<td class="column3"><%=  rs.getString("kullanıcı_tc") %></td> 
+									<td class="column3"><%=  rs.getString("randevu_tarih") %></td> 
+									 
 								</tr>
                                   
                                  <% 
                              }
+                         }
+                         else {
+                        	 System.out.println("RS BOŞ KANKA ");
                          }
                         %>
 							<!-- 	<tr>
