@@ -1,6 +1,6 @@
 eclipse.preferences.version=1
-encoding//src/main/webapp/berber_main.jsp=UTF-8
-encoding//src/main/webapp/dropdowndeneme.jsp=UTF-8
+encoding//src/main/webapp/berber_giris_response.jsp=UTF-8
+encoding//src/main/webapp/berber_randevu_listeleme.jsp=UTF-8
 encoding//src/main/webapp/error.jsp=UTF-8
 encoding//src/main/webapp/kullanici_giris.jsp=UTF-8
 encoding//src/main/webapp/kullanici_kayit.jsp=UTF-8

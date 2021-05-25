@@ -1,4 +1,6 @@
- <%@page import="java.sql.SQLException"%>
+ <%@page import="java.time.LocalDate"%>
+<%@page import="org.eclipse.jdt.internal.compiler.ast.LocalDeclaration"%>
+<%@page import="java.sql.SQLException"%>
 <%@page import="javax.servlet.jsp.tagext.TryCatchFinally"%>
 <%@page import="classes.Veritabanibaglantisi"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" %>
@@ -10,6 +12,7 @@
 </head>
 <body>  
   <% 
+  LocalDate startDate = LocalDate.now();
    int ilceid=(int)session.getAttribute("ilceid");  
    String ka=request.getParameter("kullaniciAdi");
    String sifre=request.getParameter("sifre"); 
@@ -31,7 +34,7 @@
    try {
 	   Boolean sonuc= vt.execute("insert into randevu.berberler (ilce_id,berber_ka,sifre,berber_ad,"+
        "berber_soyad,berber_tc,"+
-	   "berber_mail,berber_cinsiyet)  values ('"+ilceid+"','"+ka+"','"+sifre+"','"+ad +"','"+soyad +"','"+tc +"','"+mail +"','"+cinsiyet +"')"); 
+	   "berber_mail,berber_cinsiyet,berber_kayit_tarihi)  values ('"+ilceid+"','"+ka+"','"+sifre+"','"+ad +"','"+soyad +"','"+tc +"','"+mail +"','"+cinsiyet +"','"+startDate+"'   )"); 
 			  
 	   if(sonuc){
 		   out.print("KAYIT BAŞARILI");
