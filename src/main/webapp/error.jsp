@@ -6,9 +6,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
- 
- 
  
 HATALI GİRİS YAPTINIZ
 </body>
