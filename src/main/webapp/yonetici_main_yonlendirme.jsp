@@ -21,7 +21,7 @@
       <input type="submit"  class="submit"   align="center" value="Ekleme">     
       </form> 
       <form class="form1"  action="yonetici_kayit_silme.jsp" method="post"> 
-       <input type="submit"  class="submit"   align="center" value="Silme">     
+       <input type="submit"  class="submit"   align="center" value="Detaylı Arama ve Filtreleme">     
       </form> 
       <form class="form1"  action="yonetici_kayit_guncelleme.jsp" method="post">
         <input type="submit"  class="submit"   align="center" value="Güncelleme">    
