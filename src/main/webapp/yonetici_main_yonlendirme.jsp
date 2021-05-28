@@ -20,17 +20,16 @@
     <form class="form1"  action="yonetici_kayit_ekleme.jsp" method="post">
       <input type="submit"  class="submit"   align="center" value="Ekleme">     
       </form> 
-      <form class="form1"  action="yonetici_kayit_silme.jsp" method="post"> 
+      <form class="form1"  action="arama_sayfasi.jsp" method="post"> 
        <input type="submit"  class="submit"   align="center" value="Detaylı Arama ve Filtreleme">     
       </form> 
-      <form class="form1"  action="yonetici_kayit_guncelleme.jsp" method="post">
+      <!-- <form class="form1"  action="yonetici_kayit_guncelleme.jsp" method="post">
         <input type="submit"  class="submit"   align="center" value="Güncelleme">    
-      </form>
+      </form> -->
       <form class="form1"  action="yonetici_kayit_listeleme.jsp" method="post">
         <input type="submit"  class="submit"   align="center" value="Listeleme">    
       </form>  
     </div> 
-    
     
 </body>
 </html>

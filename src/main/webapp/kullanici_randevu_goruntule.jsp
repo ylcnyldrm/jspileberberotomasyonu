@@ -79,25 +79,7 @@
                          else {
                         	 System.out.println("RS BOŞ KANKA ");
                          }
-                        %>
-							<!-- 	<tr>
-									<td class="column1">2017-09-28 05:57</td>
-									<td class="column2">200397</td>
-									<td class="column3">Samsung S8 Black</td>
-									<td class="column4">$756.00</td>
-									<td class="column5">1</td>
-									<td class="column6">$756.00</td>
-								</tr>
-								<tr>
-									<td class="column1">2017-09-26 05:57</td>
-									<td class="column2">200396</td>
-									<td class="column3">Game Console Controller</td>
-									<td class="column4">$22.00</td>
-									<td class="column5">2</td>
-									<td class="column6">$44.00</td>
-								</tr>
-							 
-						  -->
+                        %> 
 								 
 								
 						</tbody>

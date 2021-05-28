@@ -1,3 +1,4 @@
+<%@page import="classes.Veritabanibaglantisi"%>
 <%@ page language="java"%>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@page import="java.sql.ResultSet"%>
@@ -14,31 +15,28 @@
  System.out.println("GELEN DEĞÜÜÜER"+kategori);
  %>
  <table class="table table-bordered" >
-    <tr>
-              <th>KATEGORI ADI</th>
-        <th>GUNCELLE</th>
-        <th>SIL</th>
-      </tr>
-<%-- <%
-try{
-String kategori=request.getParameter("kategori"); 
-ResultSet rs=sayiCrud.selectAllData();
+   
+<%
+Veritabanibaglantisi vt = new Veritabanibaglantisi();
+try{ 
+ResultSet rs=vt.dbdenVeriCek("select * from randevu.berberler where berber_id= '"+kategori+"' ");
+
 while(rs.next()){
-    String kategoriad=rs.getString("kategoriad");
-    if(kategori.equals(kategoriad)){
+   
 %>
 <tr>
-<td><%=rs.getString("kategoriad")%></td>
-<td><a href='kategori_guncelleme.jsp?idkategori=<%=rs.getString("idkategori")%>'>Update<span class="glyphicon glyphicon-edit" style="font-size:24px; color:green;"></span></a></td>
-<td><a href='kategori_sil.jsp?idkategori=<%=rs.getString("idkategori")%>'>Delete<span class="glyphicon glyphicon-remove" style="font-size:24px; color:red;"></span></a></td> 
+<td>  BERBER AD = <%=rs.getString("berber_ad")%></td>
+ <td> BERBER ŞİFRE = <%=rs.getString("sifre")%></td>
+ <td> BERBER BERBER TC =<%=rs.getString("berber_tc")%></td>
+ <td> BERBER MAİL = <%=rs.getString("berber_mail")%></td>
 </tr>
 <%
-    }}
+    }
 }
 catch (Exception e) {
 e.printStackTrace();
 }
-%> --%>
+%> 
 </table>
 
 </body>

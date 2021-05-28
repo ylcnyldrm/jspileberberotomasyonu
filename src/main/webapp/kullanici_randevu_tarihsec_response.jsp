@@ -32,6 +32,7 @@
 	  
 	 Boolean sonuc= vt.execute("insert into randevu.randevu (berber_id,kullanici_id,randevu_tarih) values ('"+Integer.parseInt(secilenBerberinidsi)+"','"+girenKullaniciid+"','"+stringDate+"' )"); 
 	  if(sonuc){
+		  response.sendRedirect("kullanici_main_yonlendirme.jsp");  
 			 out.println("RANDEVU ALINDI.");
 		   
 	   }else {

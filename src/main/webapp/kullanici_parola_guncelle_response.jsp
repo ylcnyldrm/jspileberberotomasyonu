@@ -27,6 +27,7 @@
 		   if (rs.getString(1).equals(eskiSifre)){
 			   Boolean b= vt.execute("update randevu.kullanici set kullanici_sifre='"+yeniSifre.toString()+"' where kullanici_id='"+girenKullaniciid+"'  ");   
 			   if(b){
+					  response.sendRedirect("kullanici_main_yonlendirme.jsp"); 
 				   out.print("GÜNCELLEME İŞLEMİ BAŞARILI"); 
 			   }else {
 				   out.print("GÜNCELLEME İŞLEMİ BAŞARISIZ"); 
