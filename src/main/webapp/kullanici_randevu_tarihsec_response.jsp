@@ -13,13 +13,13 @@
 <body>
  
 <%
-
+  int berberid=(int)session.getAttribute("id");    
  String tarih = request.getParameter("tarih");
- int girenKullaniciid=(int)session.getAttribute("girenKullaniciid");    
- String secilenBerberinidsi= (String) session.getAttribute("randevuberberid");
+ int girenKullaniciid=(int)session.getAttribute("girenKullaniciid");     
  
  System.out.println("es TARİH "+tarih);
-  if (tarih !=null && girenKullaniciid !=0 && secilenBerberinidsi !=null ){
+ System.out.println("seçilen berberin İD Sİ  "+berberid);
+  if (tarih !=null && girenKullaniciid !=0 && berberid !=0 ){
 	  
 	 Veritabanibaglantisi vt = new Veritabanibaglantisi();
 	 
@@ -30,7 +30,7 @@
 	 System.out.println("es TARİH "+tarih);
      System.out.println("yeni TARİH "+stringDate);
 	  
-	 Boolean sonuc= vt.execute("insert into randevu.randevu (berber_id,kullanici_id,randevu_tarih) values ('"+Integer.parseInt(secilenBerberinidsi)+"','"+girenKullaniciid+"','"+stringDate+"' )"); 
+	 Boolean sonuc= vt.execute("insert into randevu.randevu (berber_id,kullanici_id,randevu_tarih) values ('"+berberid+"','"+girenKullaniciid+"','"+stringDate+"' )"); 
 	  if(sonuc){
 		  response.sendRedirect("kullanici_main_yonlendirme.jsp");  
 			 out.println("RANDEVU ALINDI.");

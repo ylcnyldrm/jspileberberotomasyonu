@@ -62,11 +62,9 @@
 									<td class="column2"><%=  rs.getString("berber_soyad")%>  </td>
 									<td class="column3"><%=  rs.getString("berber_cinsiyet") %></td> 
 									<td class="column4"><a href='kullanici_randevu_tarihsec.jsp?id=<%=rs.getString("berber_id")%>'>Randevu Al </a></td>  
-									 <%
-									 session.setAttribute("randevuberberid", rs.getString("berber_id")); 
-									 %>
+									
 								</tr>
-                                  
+                                
                                  <% 
                              }
                          }

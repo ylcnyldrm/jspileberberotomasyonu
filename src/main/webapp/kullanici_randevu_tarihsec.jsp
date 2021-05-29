@@ -5,6 +5,13 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+
+
+  <%
+   int randevuid= Integer.parseInt(request.getParameter("id")); 
+   session.setAttribute("id", randevuid);
+   %>
+
    <title>jQuery DatePicker</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">

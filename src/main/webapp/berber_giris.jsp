@@ -12,8 +12,7 @@
  
 </head>
 <body> 
-
-
+ 
   <div class="main">
     <p class="sign" align="center">Berber Girişi</p>
     <form class="form1"  action="berber_giris_response.jsp" method="post">
@@ -23,7 +22,6 @@
       <p class="forgot" align="center"><a href="#">Şifremi Unuttum?</p> 
       </form> 
     </div> 
-
-
+ 
 </body>
 </html>

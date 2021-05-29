@@ -19,14 +19,25 @@
 </head>
 <body>
 
- <% 
+ <%   
+   int guncellenecekid1=0;
+   if (request.getParameter("id")!=null){
+	   int guncellemeidsi=Integer.parseInt(request.getParameter("id")); 
+	   session.setAttribute("guncellenecekKullanicininIdsi", guncellemeidsi);  
+	   System.out.println("İD GÖNDERİLDİ "+guncellemeidsi);
+   } 
+   else {
+	   String guncellenecekid=session.getAttribute("guncellenecekKullanicininIdsi").toString();  
+	   guncellenecekid1=Integer.parseInt(guncellenecekid);
+	   System.out.println("İD ALINDI "+guncellenecekid1);
+	   session.setAttribute("guncellenecekKullanicininIdsi", guncellenecekid1); 
+   } 
 	Veritabanibaglantisi vt = new Veritabanibaglantisi();
 	int ilceId = 1;
 	int ilid = 1;
 	int berberid = 1;
 	 %> 
   <div class="col-4">
-    
                          LÜTFEN İL SEÇİNİZ
 	<form name="f1" method="get" action="#"><select name=iller> 
 	<%

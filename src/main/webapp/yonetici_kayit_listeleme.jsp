@@ -59,9 +59,7 @@
 									<td class="column4"><%=  rs.getString("berber_cinsiyet")%></td> 
 									<td class="column5"><a href='yonetici_kayit_silme.jsp?id=<%=rs.getString("berber_id")%>'>SİL </a></td> 
 									<td class="column6"><a href='yonetici_kayit_guncelleme.jsp?id=<%=rs.getString("berber_id")%>'>GÜNCELLE</a></td> 
-									 <%
-									 session.setAttribute("guncellenecekKullanicininIdsi", rs.getString("berber_id")); 
-									 %>
+									 
 								</tr>
                                   
                                  <% 

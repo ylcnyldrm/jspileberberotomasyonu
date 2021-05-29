@@ -12,11 +12,10 @@
 
 <%   
    Veritabanibaglantisi vt= new Veritabanibaglantisi(); 
-   String gelenId=(String)session.getAttribute("guncellenecekKullanicininIdsi");
+   String gelenId= session.getAttribute("guncellenecekKullanicininIdsi").toString();
    System.out.println("guncellenecek KULLANCII ID "+gelenId);
     
    int guncellenecekId=Integer.parseInt(gelenId);
-		    
    int ilceid=(int)session.getAttribute("ilceid");  
    String ka=request.getParameter("kullaniciAdi");
    String sifre=request.getParameter("sifre"); 

@@ -32,7 +32,7 @@
 </head>
 <body>
  
- 
+ <h1>Randevularım</h1>
  <div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -53,12 +53,12 @@
 						int girenKullaniciid=(int)session.getAttribute("girenKullaniciid");  
 						System.out.println("GİREN KD İD "+String.valueOf(girenKullaniciid));
                         Veritabanibaglantisi vt = new Veritabanibaglantisi();
-                        ResultSet rs = vt.dbdenVeriCek("SELECT randevu.kullanici.kullanici_ad as kullanıcı_ad, "+
-                        "randevu.kullanici.kullanici_soyad as kullanıcı_soyad, "+
-                        "randevu.kullanici.kullanici_tc as kullanıcı_tc, "+
-                        "randevu.randevu.randevu_tarih as randevu_tarih "+ 
-                        "FROM randevu.kullanici,randevu.randevu "+
-                        "WHERE randevu.kullanici.kullanici_id='"+girenKullaniciid+"' ");
+                        ResultSet rs = vt.dbdenVeriCek("SELECT randevu.kullanici.kullanici_ad as kullanici_ad , "+
+                        		"randevu.randevu.randevu_tarih as kullanici_randevu_tarih,"+
+                                "randevu.kullanici.kullanici_soyad as kullanici_soyad "+
+                                "from  randevu.randevu inner join randevu.kullanici on "+
+                                "randevu.randevu.kullanici_id=randevu.kullanici.kullanici_id "+
+                                "where randevu.randevu.kullanici_id='"+girenKullaniciid+"'   ");
                           
                          if(rs!=null)
                          {
@@ -66,10 +66,9 @@
                              {
                                  %> 
 								<tr>
-									<td class="column1"><%=  rs.getString("kullanıcı_ad") %> </td>
-									<td class="column2"><%=  rs.getString("kullanıcı_soyad")%>  </td>
-									<td class="column3"><%=  rs.getString("kullanıcı_tc") %></td> 
-									<td class="column3"><%=  rs.getString("randevu_tarih") %></td> 
+									<td class="column1"><%=  rs.getString("kullanıci_ad") %> </td>
+									<td class="column2"><%=  rs.getString("kullanıci_soyad")%>  </td> 
+									<td class="column3"><%=  rs.getString("kullanici_randevu_tarih") %></td> 
 									 
 								</tr>
                                   

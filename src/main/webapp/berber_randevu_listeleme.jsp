@@ -36,7 +36,7 @@
 <body>
  
  
-  
+  <h1>Randevularım </h1>
  <div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -57,13 +57,18 @@
 						int girenBerberid=(int)session.getAttribute("girenBerberid");  
 						System.out.println("GİREN KD İD "+String.valueOf(girenBerberid));
                         Veritabanibaglantisi vt = new Veritabanibaglantisi();
-                        ResultSet rs = vt.dbdenVeriCek(" SELECT randevu.berberler.berber_ad as berber_ad, "+ 
-                                "randevu.berberler.berber_soyad as berber_soyad, "+
-        				    	"randevu.berberler.berber_tc as berber_tc, "+
-                                "randevu.randevu.randevu_tarih as randevu_tarih "+
-                                "FROM randevu.berberler,randevu.randevu "+
-                                "WHERE randevu.berberler.berber_id= '"+girenBerberid+"'  ");
-                          
+                        ResultSet rs = vt.dbdenVeriCek("SELECT randevu.berberler.berber_ad as berber_ad , "+
+                        		"randevu.berberler.berber_soyad as berber_soyad, "+
+                                "randevu.randevu.randevu_tarih as randevu_tarih  "+
+                                "from  randevu.randevu inner join randevu.berberler on "+
+                                "randevu.randevu.berber_id=randevu.berberler.berber_id "+
+                                "where randevu.randevu.berber_id='"+girenBerberid+"'  ");
+                           
+                    /* SELECT randevu.kullanici.kullanici_ad as kullanici_ad ,
+                        randevu.kullanici.kullanici_soyad as kullanici_soyad
+                        from  randevu.randevu inner join randevu.kullanici on
+                        randevu.randevu.kullanici_id=randevu.kullanici.kullanici_id 
+                        where randevu.randevu.berber_id=7 and randevu.randevu.kullanici_id=5 */
                          if(rs!=null)
                          {
                              while(rs.next())
@@ -71,8 +76,7 @@
                                  %> 
 								<tr>
 									<td class="column1"><%=  rs.getString("berber_ad") %> </td>
-									<td class="column2"><%=  rs.getString("berber_soyad")%>  </td>
-									<td class="column3"><%=  rs.getString("berber_tc") %></td> 
+									<td class="column2"><%=  rs.getString("berber_soyad")%>  </td> 
 									<td class="column3"><%=  rs.getString("randevu_tarih") %></td> 
 									 
 								</tr>
