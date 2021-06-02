@@ -22,6 +22,5 @@ public String getMail() {
 public void setMail(String mail) {
 	this.mail = mail;
 }
- 
-
+  
 }

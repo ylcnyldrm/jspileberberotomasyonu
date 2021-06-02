@@ -27,7 +27,7 @@
         <input type="submit"  class="submit"   align="center" value="Güncelleme">    
       </form> -->
       <form class="form1"  action="yonetici_kayit_listeleme.jsp" method="post">
-        <input type="submit"  class="submit"   align="center" value="Listeleme">    
+        <input type="submit"  class="submit"   align="center" value="Listeleme-Guncelleme-Silme">    
       </form>  
     </div> 
     

@@ -39,8 +39,7 @@ public class Veritabanibaglantisi {
 	        } catch (Exception e) { 
 	        } 
 	} 
-	
-	
+	 
     public ResultSet dbdenVeriCek (String sorgu) { 
     	try{  
     		baglan();
@@ -56,9 +55,7 @@ public class Veritabanibaglantisi {
 		    return null;
 		}
 	 
-    }
-    
-    
+    } 
         public Boolean  execute ( String sorgu ) throws SQLException {
     	 
     	 try {
@@ -70,10 +67,7 @@ public class Veritabanibaglantisi {
 			 System.out.print("public Boolean  dbyeveriEkle DB YE VERÝ EKLE EXCELTÝON " + e );
 			 return false;
 		}
-        	 
-    	
-    	
+        	  
     }
-	 
-
+	  
 }

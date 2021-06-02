@@ -15,6 +15,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+         <form action="arama_sayfasi_response2.jsp">
+                  <input type="text" name="arama_ad"   placeholder="ARA">
+                 <input type="submit" value="ARA" "/>
         <title>Detaylı Listeleme</title>
         <link href="css1/styles.css" rel="stylesheet" />
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />

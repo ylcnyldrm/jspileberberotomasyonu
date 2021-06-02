@@ -32,6 +32,7 @@
 			<div class="wrap-table100">
 				<div class="table100">
 					<table>
+					
 						<thead>
 							<tr class="table100-head">
 								<th class="column1">Ad</th>
@@ -50,8 +51,7 @@
                          {
                              while(rs.next())
                              {
-                                 %>
-                                 
+                                 %> 
 								<tr>
 									<td class="column1"><%=  rs.getString("berber_ad") %> </td>
 									<td class="column2"><%=  rs.getString("berber_soyad")%>  </td>
@@ -60,13 +60,15 @@
 									<td class="column5"><a href='yonetici_kayit_silme.jsp?id=<%=rs.getString("berber_id")%>'>SİL </a></td> 
 									<td class="column6"><a href='yonetici_kayit_guncelleme.jsp?id=<%=rs.getString("berber_id")%>'>GÜNCELLE</a></td> 
 									 
-								</tr>
-                                  
+								</tr> 
                                  <% 
                              }
                          }
-                        %> 
-								
+                        %>
+                        <a  class="btn btn-primary"  id=pdfcek onclick="pdfcek()">pdf olusturucu</a>
+                        <div   id="pdfolustu">
+                        <table class="table table-bordered"> 
+					
 						</tbody>
 					</table>
 				</div>
@@ -74,7 +76,26 @@
 		</div>
 	</div>
 
+ <script>
+    function pdfcek() {
+        var sTable = document.getElementById('pdfolustu').innerHTML;
+        var style = "<style>";
+        style = style + "table {width: 100%;font: 17px arial;}";
+        style = style + "table, th, td {border: solid 1px #DDD; ";
+        style = style + "</style>";
 
+        // CREATE A WINDOW OBJECT.
+        var win = window.open('', '', 'height=500,width=500');
+        win.document.write('<html><head>');
+        win.document.write('<title>Profile</title>'); 
+        win.document.write(style);
+        win.document.write('</head>');
+        win.document.write('<body>');
+        win.document.write(sTable);
+        win.document.close();
+        win.print();
+    }
+</script>
 	
 
 <!--===============================================================================================-->	

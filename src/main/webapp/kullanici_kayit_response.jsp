@@ -6,16 +6,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>KULLANICI KAYIT EKRANI</title>
 </head>
 <body>
  
    <% 
    LocalDate startDate = LocalDate.now();
    LocalDate endDate = startDate.plusMonths(2);
-   int ozelKarakterSayisi = 0; 
-   
-   
+   int ozelKarakterSayisi = 0;  
    String ka=request.getParameter("kullaniciAdi");
    String sifre=request.getParameter("sifre"); 
    String ad=request.getParameter("ad");
@@ -27,14 +25,11 @@
    for (int i = 0; i < sifre.length(); i++) {
        if (sifre.substring(i, i+1).matches("[^A-Za-z0-9]")) {
     	   ozelKarakterSayisi++;
-       }
-
-    } 
-   
+       } 
+    }  
    if(sifre!=null && ka!=null &&  ad!=null &&  soyad!=null &&  mail!=null &&  cinsiyet!=null &&  tc!=null ){
 	   if (sifre.length()>=5 && ozelKarakterSayisi>=3  ){
-		   
-		   
+		    
 		   Veritabanibaglantisi vt= new Veritabanibaglantisi();
 		   try {
 			   Boolean sonuc= vt.execute("insert into randevu.kullanici (kullanici_ad,kullanici_gercek_ad,kullanici_soyad,"+
@@ -42,13 +37,11 @@
 			   "kullanici_mail,kullanici_sifre,kullanici_kayit_tarih)  values ('"+ka+"','"+ad+"','"+soyad +"','"+tc +"','"+cinsiyet +"','"+mail +"','"+sifre +"','"+startDate +"')"); 
 					  
 			   if(sonuc){
-				  response.sendRedirect("kullanici_giris.jsp");
-				   
+				  response.sendRedirect("kullanici_giris.jsp"); 
 			   }else {
 				   out.print("KAYIT BAŞARISIZ TEKRAR DENEYİN"); 
 			   }
-		   } 
-		   
+		   }  
 		   catch(SQLException e )
 		   
 		   { 
@@ -63,12 +56,10 @@
 	   
    } 
    else {
-          // HATA MESAJI VER 
-   }
-
+	   out.print("BÜTÜN BİLGİLERİ EKSİKSİZ DOLDURUN. ");
+   } 
    
-   %>
- 
+   %> 
  
 </body>
 </html>
