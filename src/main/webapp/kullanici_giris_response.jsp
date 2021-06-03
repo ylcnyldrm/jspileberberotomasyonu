@@ -38,7 +38,7 @@
 			   String currentDate=today.toString(); 
 			   SimpleDateFormat myformat=new SimpleDateFormat("yyyy-MM-dd");
 		       String secondDate1 =currentDate; 
-		       System.out.print("SEN NESİN BE ABİ "+kullaniciKayitTarih);
+		       
 		       
 		 	   Date firstDate = myformat.parse(kullaniciKayitTarih);
 			   Date secondDate = myformat.parse(secondDate1);

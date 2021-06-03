@@ -14,6 +14,7 @@
   int gelenBerberid=Integer.parseInt(request.getParameter("id"));
   Boolean  b=  vt.execute("delete from randevu.berberler where berber_id='"+gelenBerberid+"'");
   if(b){
+	   response.sendRedirect("yonetici_main_yonlendirme.jsp");  
 	  out.print("SİLME İŞLEMİ BAŞARILI");
   }
   else {

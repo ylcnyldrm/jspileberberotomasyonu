@@ -37,6 +37,7 @@
 	   "berber_mail,berber_cinsiyet,berber_kayit_tarihi)  values ('"+ilceid+"','"+ka+"','"+sifre+"','"+ad +"','"+soyad +"','"+tc +"','"+mail +"','"+cinsiyet +"','"+startDate+"'   )"); 
 			  
 	   if(sonuc){
+		   response.sendRedirect("yonetici_main_yonlendirme.jsp");
 		   out.print("KAYIT BAŞARILI");
 		   
 	   }else {

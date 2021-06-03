@@ -37,6 +37,7 @@
      try { 
     	Boolean b= vt.execute("update randevu.berberler set ilce_id='"+ilceid+"',berber_ka='"+ka+"',sifre='"+sifre+"',berber_ad='"+ad+"',berber_soyad='"+soyad+"',berber_tc='"+tc+"',berber_mail='"+mail+"',berber_cinsiyet='"+cinsiyet+"' where berber_id='"+guncellenecekId+"'  ");   
 	   if(b){
+		   response.sendRedirect("yonetici_main_yonlendirme.jsp");  
 		   out.print("GÜNCELLEME İŞLEMİ BAŞARILI"); 
 	   }else {
 		   out.print("GÜNCELLEME İŞLEMİ BAŞARISIZ");
